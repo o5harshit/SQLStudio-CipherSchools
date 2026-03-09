@@ -59,19 +59,17 @@ CipherSchool/
 ### Server (`server/.env`)
 
 ```env
-PORT=5000
+PORT=8747
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>/<database>
 
-JWT_SECRET=replace_with_a_long_random_secret
-JWT_EXPIRES_IN=1d
-AUTH_COOKIE_NAME=auth_token
+JWT_KEY=replace_with_a_long_random_secret
 CLIENT_ORIGIN=http://localhost:5173
 
-PGHOST=localhost
-PGPORT=5432
-PGDATABASE=sql_practice
-PGUSER=postgres
-PGPASSWORD=your_password
+HOST=localhost
+DBPORT=5432
+DATABASE=sql_practice
+USER=postgres
+PASSWORD=your_password
 
 GEMINI_API_KEY=your_gemini_api_key
 ```
