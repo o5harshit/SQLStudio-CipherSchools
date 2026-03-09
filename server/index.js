@@ -14,7 +14,7 @@ const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 
-app.use(express.json({ limit: "1mb" }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
@@ -39,14 +39,7 @@ app.use("/api/auth",AuthRoutes);
 app.use("/api/assignments", assignmentRoutes);
 app.use("/api/query", queryRoutes);
 
-app.use((_req, res) => {
-  res.status(404).json({ message: "Route not found." });
-});
 
-app.use((error, _req, res, _next) => {
-  console.error(error);
-  res.status(500).json({ message: "Internal server error." });
-});
 
 const startServer = async () => {
   await connectDB();
