@@ -74,7 +74,6 @@ PGUSER=postgres
 PGPASSWORD=your_password
 
 GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-3-flash-preview
 ```
 
 ### Client (`client/.env`)
