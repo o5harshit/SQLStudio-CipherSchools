@@ -79,7 +79,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ### Client (`client/.env`)
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://localhost:8747/api
 ```
 
 ## Setup Instructions
