@@ -1,5 +1,7 @@
 # CipherSQLStudio
 
+Live Site (Auth): https://sqlstudio-cipherschools-client.onrender.com/auth
+
 CipherSQLStudio is a full-stack SQL practice platform where users:
 
 - Sign up / log in with cookie-based authentication
@@ -59,28 +61,25 @@ CipherSchool/
 ### Server (`server/.env`)
 
 ```env
-PORT=5000
+PORT=8747
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>/<database>
 
-JWT_SECRET=replace_with_a_long_random_secret
-JWT_EXPIRES_IN=1d
-AUTH_COOKIE_NAME=auth_token
+JWT_KEY=replace_with_a_long_random_secret
 CLIENT_ORIGIN=http://localhost:5173
 
-PGHOST=localhost
-PGPORT=5432
-PGDATABASE=cipher_sql_sandbox
-PGUSER=postgres
-PGPASSWORD=your_password
+HOST=localhost
+DBPORT=5432
+DATABASE=sql_practice
+USER=postgres
+PASSWORD=your_password
 
 GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-3-flash-preview
 ```
 
 ### Client (`client/.env`)
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://localhost:8747/api
 ```
 
 ## Setup Instructions
@@ -105,7 +104,7 @@ cd ../client && npm install
 - Create PostgreSQL DB:
 
 ```sql
-CREATE DATABASE cipher_sql_sandbox;
+CREATE DATABASE sql_practice;
 ```
 
 ## 4. Seed MongoDB Assignments
