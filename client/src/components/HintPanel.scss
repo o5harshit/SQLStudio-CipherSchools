@@ -1,0 +1,17 @@
+@use "../styles/variables" as v;
+
+.hint-panel {
+  border: 1px dashed v.$color-border;
+  background: #fafcff;
+  border-radius: 12px;
+  padding: 0.85rem;
+}
+
+.hint-panel__text,
+.hint-panel__placeholder {
+  margin: 0;
+}
+
+.hint-panel__placeholder {
+  color: v.$color-muted;
+}

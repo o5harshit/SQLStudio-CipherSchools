@@ -1,0 +1,124 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.auth-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(130deg, #0f172a 0%, #111827 48%, #1f2937 100%);
+}
+
+.auth-page__glow {
+  position: absolute;
+  filter: blur(44px);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.auth-page__glow--one {
+  width: 260px;
+  height: 260px;
+  top: -60px;
+  left: -40px;
+  background: rgba(14, 165, 233, 0.36);
+}
+
+.auth-page__glow--two {
+  width: 320px;
+  height: 320px;
+  bottom: -100px;
+  right: -60px;
+  background: rgba(56, 189, 248, 0.2);
+}
+
+.auth-card {
+  @include m.card;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 250, 252, 0.95) 100%);
+}
+
+.auth-card__header {
+  text-align: center;
+  margin-bottom: 1.1rem;
+
+  h1 {
+    margin: 0;
+    font-size: 1.85rem;
+    letter-spacing: 0.2px;
+  }
+
+  p {
+    margin: 0.45rem 0 0;
+    color: v.$color-muted;
+    font-size: 0.92rem;
+  }
+}
+
+.auth-card__tabs {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 0.95rem;
+
+  button {
+    border: 1px solid v.$color-border;
+    background: #fff;
+    border-radius: 12px;
+    padding: 0.55rem 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .is-active {
+    background: v.$color-primary;
+    border-color: v.$color-primary;
+    color: #fff;
+  }
+}
+
+.auth-card__form {
+  display: grid;
+  gap: 0.7rem;
+
+  input {
+    border: 1px solid v.$color-border;
+    border-radius: 12px;
+    padding: 0.72rem 0.8rem;
+    font: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: v.$color-primary;
+      box-shadow: 0 0 0 3px rgba(15, 109, 255, 0.15);
+    }
+  }
+
+  button {
+    @include m.button-primary;
+    border-radius: 12px;
+    padding-block: 0.72rem;
+  }
+}
+
+.auth-card__meta {
+  text-align: center;
+  font-size: 0.8rem;
+  color: v.$color-muted;
+  margin: 0.2rem 0 0;
+}
+
+.auth-card__error {
+  margin: 0.85rem 0 0;
+  color: v.$color-danger;
+  font-size: 0.9rem;
+}

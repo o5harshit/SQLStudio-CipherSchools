@@ -1,0 +1,69 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.assignment-list-page {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.assignment-list-page__header {
+  margin-bottom: 1rem;
+}
+
+.assignment-list-page__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.assignment-list-page__title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.assignment-list-page__subtitle {
+  margin: 0.35rem 0 0;
+  color: v.$color-muted;
+}
+
+.assignment-list-page__logout {
+  @include m.button-primary;
+  padding: 0.45rem 0.75rem;
+}
+
+.assignment-list-page__status {
+  margin: 0.75rem 0;
+}
+
+.assignment-list-page__status--error {
+  color: v.$color-danger;
+}
+
+.assignment-list-page__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@include m.min-width(v.$bp-sm) {
+  .assignment-list-page {
+    padding: 1.3rem;
+  }
+
+  .assignment-list-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include m.min-width(v.$bp-md) {
+  .assignment-list-page__title {
+    font-size: 2.2rem;
+  }
+}
+
+@include m.min-width(v.$bp-lg) {
+  .assignment-list-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

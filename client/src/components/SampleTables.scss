@@ -1,0 +1,53 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.sample-tables {
+  display: grid;
+  gap: 1rem;
+}
+
+.sample-tables__empty {
+  color: v.$color-muted;
+  margin: 0;
+}
+
+.sample-tables__table-card {
+  @include m.card;
+  padding: 1rem;
+}
+
+.sample-tables__table-name {
+  margin: 0 0 0.5rem;
+}
+
+.sample-tables__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sample-tables__column-pill {
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  color: v.$color-muted;
+  background: #f2f5fb;
+}
+
+.sample-tables__table-wrapper {
+  overflow-x: auto;
+}
+
+.sample-tables__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+
+  th,
+  td {
+    text-align: left;
+    border-bottom: 1px solid v.$color-border;
+    padding: 0.5rem;
+  }
+}

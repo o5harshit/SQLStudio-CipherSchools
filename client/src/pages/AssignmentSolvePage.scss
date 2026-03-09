@@ -1,0 +1,74 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.assignment-solve-page {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.assignment-solve-page__header,
+.assignment-solve-page__panel {
+  @include m.card;
+  padding: 1rem;
+}
+
+.assignment-solve-page__header h1,
+.assignment-solve-page__panel h2 {
+  margin-top: 0;
+}
+
+.assignment-solve-page__difficulty {
+  margin: 0.2rem 0;
+  color: v.$color-muted;
+
+  span {
+    text-transform: capitalize;
+    color: v.$color-text;
+    font-weight: 600;
+  }
+}
+
+.assignment-solve-page__actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+
+  button {
+    @include m.button-primary;
+  }
+}
+
+.assignment-solve-page__error {
+  margin: 0 0 0.6rem;
+  color: v.$color-danger;
+  font-size: 0.92rem;
+}
+
+.assignment-solve-page__validation {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+}
+
+.assignment-solve-page__validation--correct {
+  color: v.$color-success;
+}
+
+.assignment-solve-page__validation--wrong {
+  color: v.$color-warning;
+}
+
+.assignment-solve-page__attempt {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  color: v.$color-muted;
+}
+
+@include m.min-width(v.$bp-sm) {
+  .assignment-solve-page {
+    padding: 1.3rem;
+  }
+}

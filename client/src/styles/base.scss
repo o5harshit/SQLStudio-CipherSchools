@@ -1,0 +1,37 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: v.$color-text;
+  background: v.$color-bg;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: radial-gradient(circle at top right, #e4efff 0%, v.$color-bg 48%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: v.$color-primary;
+}
+
+button {
+  font-family: inherit;
+}
