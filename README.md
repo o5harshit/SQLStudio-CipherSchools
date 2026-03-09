@@ -69,7 +69,7 @@ CLIENT_ORIGIN=http://localhost:5173
 
 PGHOST=localhost
 PGPORT=5432
-PGDATABASE=cipher_sql_sandbox
+PGDATABASE=sql_practice
 PGUSER=postgres
 PGPASSWORD=your_password
 
@@ -104,7 +104,7 @@ cd ../client && npm install
 - Create PostgreSQL DB:
 
 ```sql
-CREATE DATABASE cipher_sql_sandbox;
+CREATE DATABASE sql_practice;
 ```
 
 ## 4. Seed MongoDB Assignments
